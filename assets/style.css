@@ -1,0 +1,80 @@
+:root {
+  --clr-blue: #e2fcff;
+  --clr-purple: #6f2da8;
+  --linear-blue: linear-gradient(rgba(226, 252, 255, 0) 0%, rgba(226,252,255,1) 20%, rgba(226,252,255,1) 76%, rgba(226,252,255,0) 100% );
+  --linear-purple: linear-gradient(#eadaff 20%, #eadaff 71%, rgba(234, 218, 255, 0) 100%);
+  --linear-plus: linear-gradient(90deg, #6f2da8 0%, #b391d1 48%, #e0cdf1 100%);
+  --linear-minus: linear-gradient(90deg, #007bff 0%, #a3c7ed 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3, p, span, a {
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+summary {
+  list-style: none;
+  position: relative;
+}
+
+summary::after {
+  content: '';
+  width: 74px;
+  height: 74px;
+  background: url(./icons/Icons-Plus-Button.svg), var(--linear-plus);
+  background-size: cover;
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+details[open] summary::after {
+  background: url(./icons/Icons-Minus-Button.svg), var(--linear-minus);
+  background-size: cover;
+}
+
+summary h3 {
+  min-height: 75px;
+  padding-left: 53px;
+  padding-block: 20px;
+  background-color: var(--clr-blue);
+  border-radius: 38px;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.plusbutton {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: var(--linear-plus);
+  display: list-item;
+}
