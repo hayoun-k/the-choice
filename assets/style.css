@@ -36,6 +36,29 @@ h3, p, span, a {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 24px;
+  color: white;
+  border-radius: 8px;
+  display: block;
+}
+
+.btn-primary {
+  background: var(--linear-plus);
+}
+
+.btn-primary:hover {
+  background: var(--linear-minus);
+}
+
+.btn-secondary {
+  color: var(--clr-purple);
+  border: 3px solid var(--clr-purple);
 }
 
 summary {
@@ -71,10 +94,56 @@ summary h3 {
   line-height: 1;
 }
 
-.plusbutton {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  background: var(--linear-plus);
-  display: list-item;
+header {
+  width: 100%;
+  background-color: var(--clr-blue);
+}
+
+nav {
+  width: 100%;
+  padding-inline: min(7.1%, 135px);
+  padding-block: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+nav .logo img{
+  width: 100px;
+  height: 100px;
+}
+
+nav .logo span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-list li {
+  list-style: none;
+}
+
+
+
+nav .others {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav .others img {
+  width: 60px;
+  height: auto;
+  aspect-ratio: 1 /1 ;
 }
