@@ -84,6 +84,54 @@ button {
   border: 3px solid var(--clr-purple);
 }
 
+/* forms */
+.form-container {
+  width: fit-content;
+  margin: auto;
+}
+
+.form-item {
+  display: grid;
+  gap: 24px;
+}
+
+.form-item:first-of-type {
+  margin-bottom: 24px;
+}
+
+.form-item label {
+  font-size: var(--txt-body-p);
+  line-height: 34px;
+  font-weight: 700;
+}
+
+.form-item input {
+  padding: 14px 24px;
+  border-radius: 18px;
+  font-size: 24px;
+  border: 4px solid #9747ff;
+}
+
+.form-item input:focus-visible {
+  outline: none;
+  border-color: #007bff;
+}
+
+.form-item input:focus-visible::placeholder {
+  color: transparent;
+}
+
+.form-container button {
+  margin-top: 24px;
+  margin-inline: auto;
+  box-shadow: 5px 4px 7.8px rgba(0,0,0,0.25);
+}
+
+footer .form-item input {
+  background-color: rgba(151, 71, 255, 0.3);
+  color: white;
+}
+
 header {
   width: 100%;
   background-color: var(--clr-lightblue);
@@ -156,6 +204,8 @@ nav .others .language:hover {
   grid-template-rows: repeat(4,1fr);
   background-color: var(--clr-lightblue);
   border: 2px solid #007bff;
+  position: relative;
+  z-index: 2;
 }
 
 nav .others img {
@@ -641,51 +691,46 @@ footer h2 {
   font-size: 3rem;
 }
 
-footer .form-container {
-  width: fit-content;
-  margin: auto;
-}
-
-footer .form-item {
-  display: grid;
-  gap: 24px;
-}
-
-footer .form-item:first-of-type {
-  margin-bottom: 24px;
-}
-
-footer .form-item label {
-  font-size: var(--txt-body-p);
-  line-height: 34px;
-  font-weight: 700;
-}
-
-footer .form-item input {
-  padding: 14px 24px;
-  border: 4px solid #9747ff;
-  border-radius: 18px;
-  background-color: rgba(151, 71, 255, 0.3);
-  color: white;
-  font-size: 24px;
-}
-
 footer .form-item input::placeholder {
   color: white;
 }
 
-footer .form-item input:focus-visible {
-  outline: none;
-  border-color: #007bff;
+
+/* coming soon */
+main:has(.coming-soon) {
+  background: url(./images/Hero-Section/Background_hero.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-footer .form-item input:focus-visible::placeholder {
-  color: transparent;
+main:has(.coming-soon)::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: var(--linear-gray);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  position: absolute;
+  inset: 0;
 }
 
-footer .form-container button {
-  margin-top: 24px;
-  margin-inline: auto;
-  box-shadow: 5px 4px 7.8px rgba(0,0,0,0.25);
+.coming-soon {
+  max-width: 1200px;
+  margin: auto;
+  padding-block: 105px;
+  position: relative;
+  z-index: 1;
 }
 
+.coming-soon :is(h1, p) {
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
+.coming-soon p {
+  font-size: var(--txt-body-p);
+}
