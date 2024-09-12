@@ -43,17 +43,26 @@
       <h1>Your Adventure is Loading...</h1>
       <p>We're coding up a revolutionary learning experience. Be the first to embark on this epic journey. Enter your name and email for exclusive updates and early access opportunities.</p>
       <div class="form-container">
-        <form action="" id="form">
+        <form action="" method="POST" id="form">
+          <!-- Web3Forms -->
+          <input type="hidden" name="access_key" value="294e8a9a-eb41-43a5-99ce-0db597a40715">
+          <input type="hidden" name="subject" value="New Submission from Web3Forms">
+          <input type="checkbox" name="botcheck" id="" style="display: none;">
+          <input type="hidden" name="from_name" value="The Choices">
+          <!--  -->
           <div class="form-item">
             <label for="name">Enter name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter name">
+            <input type="text" id="name" name="name" placeholder="Enter name" required>
           </div>
           <div class="form-item">
             <label for="email">Enter email address:</label>
-            <input type="email" id="email" name="email" placeholder="Enter email">
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
           </div>
-          <button class="btn btn-primary" >Submit</button>
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          <button type="submit" class="btn btn-primary" >Submit</button>
+          <div id="result"></div>
         </form>
+        <script src="./assets/form.js"></script>
       </div>
     </section>
   </main>

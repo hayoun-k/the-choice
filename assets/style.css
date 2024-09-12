@@ -19,6 +19,13 @@
   }
 }
 
+@media screen and (width < 426px) {
+  :root {
+    --fnt-btn: 1rem;
+    --txt-body-p: 1.33rem;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -130,6 +137,12 @@ button {
 footer .form-item input {
   background-color: rgba(151, 71, 255, 0.3);
   color: white;
+}
+
+@media screen and (width < 425px) {
+  .form-item input {
+    padding-inline: 4px;
+  }
 }
 
 header {
@@ -246,6 +259,27 @@ nav .others .language:hover .lang-icon:nth-of-type(4) {
   /* margin-top: 300%; */
 }
 
+@media screen and (width < 769px) {
+  .nav-list {
+    display: none;
+  }
+}
+
+@media screen and (width< 426px) {
+  nav .others {
+    gap: 2px;
+  }
+
+  nav .others .dropdown-container {
+    min-width: 60px;
+    height: 60px;
+  }
+
+  nav .others img {
+    width: 40px;
+  }
+}
+
 /* main */
 main {
   overflow-x: hidden;
@@ -253,6 +287,12 @@ main {
 
 section {
   padding: 210px clamp(5%, 150px, 8.33%);
+}
+
+@media screen and (orientation: portrait) {
+  section {
+    padding-block: 100px;
+  }
 }
 
 /* hero */
@@ -290,6 +330,12 @@ section {
   border-color: var(--clr-blue);
 }
 
+@media screen and (width < 426px) {
+  h1 {
+    font-size: 38px;
+  }
+}
+
 /* about */
 .about {
   display: grid;
@@ -310,6 +356,16 @@ section {
   transform: scale(1.6) translateY(-10%);
 }
 
+@media screen and (width < 426px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about img {
+    transform: none;
+  }
+}
+
 /* howtoplay */
 
 .howtoplay {
@@ -326,6 +382,12 @@ section {
 
 .howtoplay p {
   font-size: var(--txt-body-p);
+}
+
+@media screen and (width < 426px) {
+  .howtoplay {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* journey */
@@ -431,6 +493,45 @@ section {
   font-size: 24px;
 }
 
+@media screen and (width < 426px) {
+
+  .journey .timeline {
+    /* transform: scale(0.7) translate(-30%, -30%); */
+    margin-top: 0;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .journey .timeline .entry {
+    transform: translateY(13%);
+
+    img {
+      width: 35px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+    /* transform: scale(0.5) translate(-30%, -30%); */
+  }
+
+  :is(.journey .timeline .entry):nth-of-type(4),
+  :is(.journey .timeline .entry):nth-of-type(5),
+  :is(.journey .timeline .entry):nth-of-type(6) {
+    transform: translateY(60%) ;
+  }
+
+  :is(.journey .timeline .entry):nth-of-type(7),
+  :is(.journey .timeline .entry):nth-of-type(8),
+  :is(.journey .timeline .entry):nth-of-type(9) {
+    transform: translateY(110%) ;
+  }
+}
+
 /* rewards */
 
 .rewards .container {
@@ -498,6 +599,12 @@ section {
   font-family: 'Orbitron', sans-serif;
 }
 
+@media screen and (width < 426px) {
+  .rewards .container {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* choose-your-character */
 
 .cyc {
@@ -540,6 +647,18 @@ section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   position: relative;
+}
+
+@media screen and (width < 426px) {
+  .cyc .grid-container {
+    grid-template-areas: "c"
+    "a"
+    "b";
+  }
+
+  .cyc .guide {
+    padding-top: 30px;
+  }
 }
 
 /* stage */
@@ -615,6 +734,45 @@ section {
   }
 }
 
+@media screen and (width < 426px) {
+  .stage .timeline {
+    min-height: unset;
+  }
+
+  .stage .timeline-background {
+    height: 68%;
+  }
+
+  .stage .timeline .entry {
+    min-height: unset;
+    transform: translateY(5%);
+
+    img {
+      width: 35px;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    h4 {
+      font-size: 22px;
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+    /* transform: scale(0.5) translate(-30%, -30%); */
+  }
+
+  .stage .timeline .entry:nth-of-type(n+4) {
+    transform: translate(55%, 8%);
+  }
+
+}
+
 /* faq */
 .faq {
   background: var(--linear-purple);
@@ -677,9 +835,33 @@ section {
   line-height: 34px;
 }
 
+@media screen and (width < 425px) {
+  .faq-list {
+    margin-top: 1em;
+  }
+
+  .faq summary h3 {
+    width: calc(100% - 56px);
+    min-height: unset;
+    padding-left: unset;
+    padding-inline: 1rem;
+    font-size: 1rem;
+  }
+
+  .faq summary::after {
+    width: 56px;
+    height: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* footer */
+
 footer {
-  padding: 160px 100px;
+  padding: 160px clamp(5%, 150px, 8.33%);
   background-image: url(./images/Footer/Background\ -\ Full.png);
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -695,6 +877,11 @@ footer .form-item input::placeholder {
   color: white;
 }
 
+@media screen and (width < 426px) {
+  footer {
+    padding: ;
+  }
+}
 
 /* coming soon */
 main:has(.coming-soon) {
