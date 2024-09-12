@@ -9,7 +9,7 @@
   --linear-gray: linear-gradient(#f2f2f2 56%, #c1bdbb 80%, #8a817c 100%);
 
   --txt-subtitle: 2rem;
-  --txt-body-p: 1.25rem; /* 20px */
+  --txt-body-p: 1.3rem;
   --fnt-btn: 2rem;
 
 }
@@ -332,21 +332,45 @@ section {
   min-height: calc(100dvh - 86px);
   margin-top: 86px;
   padding-top: 60px;
-  background-image: url(./images/Hero-Section/Background\ -\ Full_hero.png),linear-gradient(#000 31%, rgba(0,0,0,59%) 54%, rgba(0,0,0,0) 79%);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  /* background:center / cover no-repeat url(./images/Hero-Section/HeroSection.png),linear-gradient(#000 31%, rgba(0,0,0,59%) 54%, rgba(0,0,0,0) 79%); */
+  /* background: 
+  url(./images/Hero-Section/Character\ \(Fade\).png),
+  url(./images/Hero-Section/Guide\ -\ Icon.png),
+  url(./images/Hero-Section/3.0\ Window.png),
+  url(./images/Hero-Section/Background_hero.png),
+  linear-gradient(#000 31%, rgba(0,0,0,59%) 54%, rgba(0,0,0,0) 79%); */
+  /* background-size: 35% auto, 5% auto, 27% auto, cover; */
+
+  /* background-position: 8% 120%, 33% 63%, 90% 30%, center; */
   mix-blend-mode: multiply;
+  background:
+    url(./images/Hero-Section/HeroSection\ \(1\).png),
+    url(./images/Hero-Section/HeroSection\ \(2\).png),
+    url(./images/Hero-Section/Background_hero.png),
+    linear-gradient(#000 31%, rgba(0,0,0,59%) 54%, rgba(0,0,0,0) 79%);
+  background-position: 0% 100%, 12vw 0%, center, center;
+  background-size: auto 100%, auto 100%, auto, auto;
+  background-repeat: no-repeat;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  display: none;
 }
 
 .hero .underline {
+  max-width: 500px;
   margin-block: 40px;
   margin-inline: auto;
 }
 
 .hero p {
   margin: auto;
-  max-width: 724px;
+  max-width: 540px;
   font-size: var(--txt-body-p);
   text-align: center;
 }
@@ -385,7 +409,7 @@ section {
 }
 
 .about img {
-  transform: scale(1.6) translateY(-10%);
+  transform: scale(1.5) translateY(0%);
 }
 
 @media screen and (width < 426px) {
