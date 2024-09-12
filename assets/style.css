@@ -26,6 +26,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -39,6 +43,8 @@ img {
 
 h1, h2 {
   font-family: 'Orbitron', sans-serif;
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
@@ -52,6 +58,8 @@ h2 {
 
 h3, p, span, a, label, input {
   font-family: 'Open Sans', sans-serif;
+  position: relative;
+  z-index: 2;
 }
 
 a {
@@ -65,6 +73,17 @@ li {
 
 button {
   border: none;
+}
+
+.wrapper {
+  content: '';
+  width: 100vw;
+  height: 100dvh;
+  background: var(--linear-gray);
+  opacity: 0.25;
+  position: fixed;
+  /* mix-blend-mode: multiply ; */
+  z-index: -2;
 }
 
 .btn {
@@ -148,6 +167,9 @@ footer .form-item input {
 header {
   width: 100%;
   background-color: var(--clr-lightblue);
+  filter: drop-shadow(5px 4px 7.8px rgba(0,0,0,0.25));
+  position: fixed;
+  z-index: 3;
 }
 
 nav {
@@ -168,8 +190,10 @@ nav .logo img{
   height: 80px;
 }
 
-@media screen and (width < 1360px) {
-
+@media screen and (width < 425px) {
+  nav {
+    padding-block: 20px;
+  }
 }
 
 /* nav .logo span {
@@ -287,6 +311,8 @@ main {
 
 section {
   padding: 210px clamp(5%, 150px, 8.33%);
+  position: relative;
+  z-index: 2;
 }
 
 @media screen and (orientation: portrait) {
@@ -299,11 +325,13 @@ section {
 
 .hero {
   min-height: 900px;
+  margin-top: 160px;
   padding-top: 60px;
   background-image: url(./images/Hero-Section/Background\ -\ Full_hero.png),linear-gradient(#000 31%, rgba(0,0,0,59%) 54%, rgba(0,0,0,0) 79%);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  mix-blend-mode: multiply;
 }
 
 .hero .underline {
@@ -612,6 +640,7 @@ section {
   background-image: url(./images/Choose-Your-Character/Background.png);
   background-size: cover;
   background-repeat: no-repeat;
+  mix-blend-mode: multiply;
 }
 
 .cyc .grid-container {
@@ -664,6 +693,7 @@ section {
 /* stage */
 .stage {
   background-color: #eadaff;
+  mix-blend-mode: multiply;
 }
 
 .stage .timeline {
@@ -776,6 +806,7 @@ section {
 /* faq */
 .faq {
   background: var(--linear-purple);
+  mix-blend-mode: multiply;
 }
 
 .faq-list {
@@ -865,6 +896,7 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
+  mix-blend-mode: multiply;
 }
 
 footer h2 {
@@ -907,8 +939,12 @@ main:has(.coming-soon)::after {
 
 .coming-soon {
   max-width: 1200px;
+  min-height: calc(100dvh - 160px);
   margin: auto;
-  padding-block: 105px;
+  margin-top: 160px;
+  padding-block: 80px;
+
+  /* padding-top: 60px; */
   position: relative;
   z-index: 1;
 }
