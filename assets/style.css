@@ -259,7 +259,7 @@ nav .others .language:hover .lang-icon:nth-of-type(4) {
   /* margin-top: 300%; */
 }
 
-@media screen and (width < 769px) {
+@media screen and (orientation: portrait) {
   .nav-list {
     display: none;
   }
