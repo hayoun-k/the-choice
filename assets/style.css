@@ -8,14 +8,15 @@
   --linear-minus: linear-gradient(90deg, #007bff 0%, #a3c7ed 100%);
   --linear-gray: linear-gradient(#f2f2f2 56%, #c1bdbb 80%, #8a817c 100%);
 
-  --txt-body-p: 1.875rem; /* 30px */
-  --fnt-btn: 1.5rem;
+  --txt-subtitle: 2rem;
+  --txt-body-p: 1.25rem; /* 20px */
+  --fnt-btn: 2rem;
 
 }
 
 @media screen and (width < 1500px) {
   :root {
-    --fnt-btn: 1.2rem;
+    --fnt-btn: 1.5rem;
   }
 }
 
@@ -48,12 +49,12 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 2.375rem;
   text-align: center;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 h3, p, span, a, label, input {
@@ -118,7 +119,7 @@ button {
 
 .form-item {
   display: grid;
-  gap: 24px;
+  gap: 12px;
 }
 
 .form-item:first-of-type {
@@ -126,15 +127,15 @@ button {
 }
 
 .form-item label {
-  font-size: var(--txt-body-p);
+  font-size: 1.5rem;
   line-height: 34px;
   font-weight: 700;
 }
 
 .form-item input {
-  padding: 14px 24px;
+  padding: 12px 24px;
   border-radius: 18px;
-  font-size: 24px;
+  font-size: 18px;
   border: 4px solid #9747ff;
 }
 
@@ -158,6 +159,18 @@ footer .form-item input {
   color: white;
 }
 
+.coming-soon .form-item input {
+  background-color: transparent;
+}
+
+.coming-soon .form-item input::placeholder {
+  color: black;
+}
+
+.coming-soon .form-item input:focus-visible::placeholder {
+  color: transparent;
+}
+
 @media screen and (width < 425px) {
   .form-item input {
     padding-inline: 4px;
@@ -175,7 +188,7 @@ header {
 nav {
   width: 100%;
   padding-inline: clamp(5%, 150px, 8.33%);
-  padding-block: 40px;
+  padding-block: 8px;
   display: flex;
   justify-content: space-between;
 }
@@ -187,12 +200,17 @@ nav .logo {
 
 nav .logo img{
   width: auto;
-  height: 80px;
+  height: 52px;
+}
+
+nav .btn {
+  font-size: 1.1rem;
+  padding: 6px 12px;
 }
 
 @media screen and (width < 425px) {
   nav {
-    padding-block: 20px;
+    padding-block: 16px;
   }
 }
 
@@ -221,8 +239,8 @@ nav .others {
 }
 
 nav .others .dropdown-container {
-  min-width: 80px;
-  height: 80px;
+  min-width: 70px;
+  height: 70px;
   position: relative;
 }
 
@@ -232,6 +250,7 @@ nav .others .language {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  border: 2px solid transparent;
   border-radius: 18px;
   position: absolute;
   /* top: -10px; */
@@ -240,13 +259,13 @@ nav .others .language {
 nav .others .language:hover {
   grid-template-rows: repeat(4,1fr);
   background-color: var(--clr-lightblue);
-  border: 2px solid #007bff;
+  border-color: #007bff;
   position: relative;
   z-index: 2;
 }
 
 nav .others img {
-  width: 60px;
+  width: 50px;
   height: auto;
   aspect-ratio: 1 /1 ;
 }
@@ -265,22 +284,8 @@ nav .others .language .lang-icon:not(:first-of-type) {
   /* position: absolute; */
 }
 
-
-
 nav .others .language:hover .lang-icon:not(:first-of-type) {
   display: block;
-}
-
-nav .others .language:hover .lang-icon:nth-of-type(2) {
-  /* margin-top: 100%; */
-}
-
-nav .others .language:hover .lang-icon:nth-of-type(3) {
-  /* margin-top: 200%; */
-}
-
-nav .others .language:hover .lang-icon:nth-of-type(4) {
-  /* margin-top: 300%; */
 }
 
 @media screen and (orientation: portrait) {
@@ -310,7 +315,7 @@ main {
 }
 
 section {
-  padding: 210px clamp(5%, 150px, 8.33%);
+  padding: 120px clamp(5%, 150px, 8.33%);
   position: relative;
   z-index: 2;
 }
@@ -324,8 +329,8 @@ section {
 /* hero */
 
 .hero {
-  min-height: 900px;
-  margin-top: 160px;
+  min-height: calc(100dvh - 86px);
+  margin-top: 86px;
   padding-top: 60px;
   background-image: url(./images/Hero-Section/Background\ -\ Full_hero.png),linear-gradient(#000 31%, rgba(0,0,0,59%) 54%, rgba(0,0,0,0) 79%);
   background-size: cover;
@@ -373,7 +378,6 @@ section {
 
 .about h2 {
   margin-bottom: 2rem;
-  font-size: 2.375rem;
 }
 
 .about p {
@@ -405,7 +409,6 @@ section {
 .howtoplay h2 {
   margin-top: 1rem;
   margin-bottom: 2rem;
-  font-size: 2.375rem;
 }
 
 .howtoplay p {
@@ -427,7 +430,6 @@ section {
 
 .journey h2 {
   padding-bottom: 1em;
-  font-size: 3rem;
 }
 
 .journey .timeline {
@@ -465,6 +467,14 @@ section {
   position: relative;
 }
 
+:is(.journey .timeline .entry):nth-of-type(1) {
+  transform: translateX(-10%);
+}
+
+:is(.journey .timeline .entry):nth-of-type(2) {
+  transform: translateX(-5%);
+}
+
 :is(.journey .timeline .entry):nth-of-type(4),
 :is(.journey .timeline .entry):nth-of-type(5),
 :is(.journey .timeline .entry):nth-of-type(6) {
@@ -473,16 +483,18 @@ section {
 
 .journey .timeline .entry:nth-of-type(4) {
   grid-area: f;
+  transform: translate(-15%, 50%);
 }
 
 .journey .timeline .entry:nth-of-type(6) {
   grid-area: d;
+  transform: translate(15%, 50%);
 }
 
 :is(.journey .timeline .entry):nth-of-type(7),
 :is(.journey .timeline .entry):nth-of-type(8),
 :is(.journey .timeline .entry):nth-of-type(9) {
-  transform: translateY(100%);
+  transform: translate(10%, 100%);
 }
 
 /* .journey .timeline .entry::after {
@@ -511,14 +523,14 @@ section {
 .journey .timeline .entry h3 {
   max-width: 230px;
   margin: auto;
-  font-size: 30px;
-  line-height: 34px;
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 
 .journey .timeline .entry p {
-  max-width: 230px;
+  max-width: 200px;
   margin: auto;
-  font-size: 24px;
+  font-size: 1.2rem;
 }
 
 @media screen and (width < 426px) {
@@ -537,12 +549,12 @@ section {
     }
 
     h3 {
-      font-size: 18px;
+      font-size: 1.1rem;
       line-height: 1.1;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     /* transform: scale(0.5) translate(-30%, -30%); */
   }
@@ -623,7 +635,7 @@ section {
 
 .ecosystem h3 {
   text-align: center;
-  font-size: 38px;
+  font-size: 2rem;
   font-family: 'Orbitron', sans-serif;
 }
 
@@ -658,7 +670,6 @@ section {
 
 .cyc .text-container h2 {
   margin-block: 1em;
-  font-size: 2.375rem;
 }
 
 .cyc .text-container p {
@@ -697,12 +708,14 @@ section {
 }
 
 .stage .timeline {
-  min-height: 700px;
+  /* min-height: 700px; */
+  margin-inline: auto;
   display: grid;
   grid-template-areas: 
   "a b c"
   "d . e";
   /* row-gap: 24px; */
+  justify-content: center;
   position: relative;
   text-align: center;
   column-gap: 5%;
@@ -729,16 +742,17 @@ section {
 } */
 
 .stage .timeline .entry {
-  min-height: 400px;
+  min-height: 300px;
+  max-width: 320px;
   z-index: 1;
 }
 
 .stage .timeline .entry:nth-of-type(n+4) {
-  transform: translate(55%, 33%);
+  transform: translate(66%, 35%);
 }
 
 .stage .timeline .entry > *:not(:last-child) {
-  margin-bottom: 12px;
+  margin-bottom: 0.5em;
 }
 
 .stage .timeline img {
@@ -746,8 +760,8 @@ section {
 }
 
 .stage .timeline :is(h3, h4) {
-  font-size: 30px;
-  line-height: 34px;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
 .stage .timeline h4 {
@@ -756,7 +770,8 @@ section {
 }
 
 .stage .timeline p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
 }
 @media screen and (width < 1440px) {
   .stage .timeline p {
@@ -809,6 +824,10 @@ section {
   mix-blend-mode: multiply;
 }
 
+.faq h2 {
+  margin-bottom: 1em;
+}
+
 .faq-list {
   display: flex;
   flex-direction: column;
@@ -844,19 +863,22 @@ section {
 
 .faq summary h3 {
   width: calc(100% - 85px);
-  min-height: 75px;
+  min-height: 70px;
   padding-left: 53px;
   padding-block: 20px;
   background-color: var(--clr-lightblue);
   border-radius: 38px;
-  font-size: var(--txt-body-p);
+  font-size: 1.5rem;
   line-height: 34px;
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .faq .answer {
+  width: calc(100% - 85px);
   margin-top: 24px;
-  padding: 30px 45px 15px 45px;
+  padding: 15px 45px;
   background-color: #002395;
   border-radius: 38px;
   filter: drop-shadow(5px 4px 5px rgba(0,0,0,0.25));
@@ -902,7 +924,7 @@ footer {
 footer h2 {
   padding-bottom: 60px;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 footer .form-item input::placeholder {
@@ -939,9 +961,9 @@ main:has(.coming-soon)::after {
 
 .coming-soon {
   max-width: 1200px;
-  min-height: calc(100dvh - 160px);
+  min-height: calc(100dvh - 120px);
   margin: auto;
-  margin-top: 160px;
+  margin-top: 120px;
   padding-block: 80px;
 
   /* padding-top: 60px; */
@@ -955,5 +977,9 @@ main:has(.coming-soon)::after {
 }
 
 .coming-soon p {
-  font-size: var(--txt-body-p);
+  max-width: 800px;
+  margin-bottom: 1.2em;
+  margin-inline: auto;
+  font-size: 1.5rem;
+  text-align: center;
 }
